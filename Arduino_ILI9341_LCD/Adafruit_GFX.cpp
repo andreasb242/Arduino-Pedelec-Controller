@@ -56,7 +56,7 @@ Adafruit_GFX::Adafruit_GFX(int16_t w, int16_t h):
   cursor_y  = cursor_x    = 0;
   textsize  = 1;
   textcolor = textbgcolor = 0xFFFF;
-  wrap      = true;
+  //wrap      = false;
   _cp437    = false;
 }
 
@@ -425,10 +425,10 @@ void Adafruit_GFX::write(uint8_t c) {
   } else {
     drawChar(cursor_x, cursor_y, c, textcolor, textbgcolor, textsize);
     cursor_x += textsize*6;
-    if (wrap && (cursor_x > (_width - textsize*6))) {
-      cursor_y += textsize*8;
-      cursor_x = 0;
-    }
+//    if (wrap && (cursor_x > (_width - textsize*6))) {
+//      cursor_y += textsize*8;
+//      cursor_x = 0;
+//    }
   }
 #if ARDUINO >= 100
   return 1;
@@ -568,9 +568,9 @@ void Adafruit_GFX::setTextColor(uint16_t c, uint16_t b) {
   textbgcolor = b;
 }
 
-void Adafruit_GFX::setTextWrap(boolean w) {
-  wrap = w;
-}
+//void Adafruit_GFX::setTextWrap(boolean w) {
+//  wrap = w;
+//}
 
 uint8_t Adafruit_GFX::getRotation(void) const {
   return rotation;

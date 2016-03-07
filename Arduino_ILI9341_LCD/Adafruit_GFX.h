@@ -50,7 +50,7 @@ class Adafruit_GFX : public Print {
   void setTextColor(uint16_t c);
   void setTextColor(uint16_t c, uint16_t bg);
   void setTextSize(uint8_t s);
-  void setTextWrap(boolean w);
+  //void setTextWrap(boolean w);
   void setRotation(uint8_t r);
   void cp437(boolean x=true);
 
@@ -80,9 +80,11 @@ class Adafruit_GFX : public Print {
   uint8_t
     textsize,
     rotation;
-  boolean
-    wrap,   // If set, 'wrap' text at right edge of display
-    _cp437; // If set, use correct CP437 charset (default is off)
+  //! If set, 'wrap' text at right edge of display
+  //boolean wrap;
+
+  //! If set, use correct CP437 charset (default is off)
+  bool _cp437;
 };
 
 class Adafruit_GFX_Button {
